@@ -1,0 +1,62 @@
+question==>https://www.codechef.com/problems/RUMBLING
+
+solution_link==>https://www.codechef.com/viewsolution/50527528
+
+#include<bits/stdc++.h>
+#include <iostream>
+
+#define int long long
+
+using namespace std;
+
+signed main() {
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        string s;
+        cin>>s;
+        int x,y,i,ans=LONG_MAX;
+        cin>>x>>y;
+        vector<int>v1(n,0),v2(n,0);//v1 for east direction v2 for west direction;
+        for(i=0;i<n;i++){
+            if(s[i]=='N'){
+                v1[i]=min(x,3*y);
+                v2[i]=min(3*x,y);
+            }
+            if(s[i]=='S'){
+                v1[i]=min(3*x,y);
+                v2[i]=min(x,3*y);
+            }
+            if(s[i]=='E'){
+                v1[i]=0;
+                v2[i]=min(2*x,2*y);
+            }
+            if(s[i]=='W'){
+                v1[i]=min(2*x,2*y);
+                v2[i]=0;
+            }
+            
+        }
+        
+        vector<int>east(n,0),west(n,0);
+        east[0]=v1[0];
+        west[n-1]=v2[n-1];
+        for(i=1;i<n;i++){
+            east[i]=v1[i]+east[i-1];
+        }
+        for(i=n-2;i>=0;i--){
+            west[i]=v2[i]+west[i+1];
+        }
+        ans=min(ans,west[0]);
+        ans=min(ans,east[n-1]);
+        
+        for(i=0;i<n-1;i++){
+            ans = min(ans,east[i]+west[i+1]);
+        }
+        cout<<ans<<endl;
+    }
+	// your code goes here
+	return 0;
+}
