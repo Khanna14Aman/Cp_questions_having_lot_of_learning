@@ -1,7 +1,8 @@
 question==>https://www.codechef.com/problems/POSSPEW
 
-question==>https://www.codechef.com/viewsolution/51193335
+solution1==>https://www.codechef.com/viewsolution/51193335
 
+solution2==>https://www.codechef.com/viewsolution/51195671
 
 #include<iostream>
 #include<bits/stdc++.h>
