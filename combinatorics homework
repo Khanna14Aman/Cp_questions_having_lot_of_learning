@@ -1,0 +1,29 @@
+question==>https://codeforces.com/contest/1574/problem/B
+
+solution==>https://codeforces.com/contest/1574/submission/129469486
+
+#include<bits/stdc++.h>
+#define int long long 
+using namespace std;
+signed main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int a,b,c,m;
+        cin>>a>>b>>c>>m;
+        int ar[3];
+        ar[0]=a;
+        ar[1]=b;
+        ar[2]=c;
+        sort(ar,ar+3);
+        int maxi = a+b+c-3;      //here we find maximum no of possible pair like a=4,b=2,c=3 so maximum pair will be===>aaaabbccc
+        int mini = ar[2]-ar[1]-ar[0]-1;      //here we find minimum no of possible pair like a=4,b=3,c=2 so minimum pair will be cabababac
+        if(m>=mini && m<=maxi){
+            cout<<"YES\n";
+        }
+        else{
+            cout<<"NO\n";
+        }
+    }
+    return 0;
+}
