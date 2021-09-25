@@ -1,0 +1,38 @@
+question==>https://www.codechef.com/LTIME100B/problems/INTREP
+
+#include<bits/stdc++.h>
+#include <iostream>
+#define int long long
+using namespace std;
+
+signed main() {
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        if(n==1){
+            cout<<"3 2\n";
+            continue;
+        }
+        if(n%2==0){        // suppose n is even so distance between 2*n and n will always be n...Now let n have t distinct factors so this means that B has t distinct factors but in A there is value 2*n  now in (n) there will be t factors and we will not include 2 as distinct factoors because n is even so 2 already included
+            cout<<2*n<<" "<<n<<"\n";
+            continue;
+        }
+        // if n is odd let t be any smallest prime number which will not devide n so distance between t*n and (t-1)*n will always be n..Now  As A = t*n and B = (t-1)*n so let n has f number of distinct factors so A has f+1 numbers of factors as t will not devide n,,,and also as t is odd so (t-1) is even which also not devide n so its another distinct factors for n
+        // So both A and B have equal number of distinct factors
+        vector<int>v;
+        v={2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,61,67,71,73,79,83,89,97};
+        int f =2;
+        for(int i=1;i<20;i++){
+            if(n%v[i]!=0){
+                f=v[i];
+                break;
+            }
+        }
+        cout<<f*n<<" "<<(f-1)*n<<"\n";
+        
+    }
+	// your code goes here
+	return 0;
+}
