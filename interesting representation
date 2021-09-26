@@ -1,5 +1,9 @@
 question==>https://www.codechef.com/LTIME100B/problems/INTREP
 
+do not focus on making first player maximum points rather need to focus on making second player smaller points
+
+example test case==>[[20,3,20,17,2,12,15,17,4,15],[20,10,13,14,15,5,2,3,14,3]] this will get fail with dp so try this method
+
 #include<bits/stdc++.h>
 #include <iostream>
 #define int long long
