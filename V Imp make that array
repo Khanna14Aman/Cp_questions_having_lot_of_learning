@@ -1,0 +1,43 @@
+question==>https://www.codechef.com/problems/SWAPGAME
+
+solution==>https://www.codechef.com/viewsolution/51718510
+
+discuss==>https://www.youtube.com/watch?v=5YgqZq8wyXE
+
+#include<bits/stdc++.h>
+#include <iostream>
+#define int long long 
+using namespace std;
+
+void solve(){
+    int n;
+    cin>>n;
+    vector<int>a(n);
+    vector<int>b(n);
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+        
+    }
+    for(int i=0;i<n;i++){
+        cin>>b[i];
+    }
+    //very important portion
+    int aa=0,bb=0;
+    for(int i=0;i<n;i++){
+        aa += (a[i]*i);
+        bb += (b[i]*i);
+    }  
+    ////
+    int ans = bb-aa;
+    cout<<ans<<"\n";
+}
+
+signed main() {
+    int t ;
+    cin>>t;
+    while(t--){
+        solve();
+    }
+	// your code goes here
+	return 0;
+}
