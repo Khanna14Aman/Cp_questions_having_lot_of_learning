@@ -1,0 +1,51 @@
+question==>https://codeforces.com/contest/1594/problem/C
+
+#include<bits/stdc++.h>
+#define int long long 
+using namespace std;
+#define int long long
+int mod = 1e9+7;
+
+
+signed main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        char var;
+        cin>>n>>var;
+        string s;
+        cin>>s;
+        int flag=0;
+        for(int i =0;i<n;i++){
+            if(s[i]!=var){
+                flag=1;
+                break;
+            }
+        }
+        if(flag==0){
+            cout<<"0\n";                   // if all are equal
+            continue;
+        }
+        else{
+            int no =0;
+            for(int j=n/2;j<n;j++){
+                if(s[j]==var){
+                    no = j+1;
+                    break;
+                }
+            }
+            if(no!=0){                     // if last one is equal to var
+                cout<<"1\n";
+                cout<<no<<"\n";
+                continue;
+            }
+            else{                            //if last is also not equal to var
+                cout<<"2\n";
+                cout<<n<<" "<<n-1<<"\n";
+                continue;
+            }
+        }
+    }
+    return 0;
+}
