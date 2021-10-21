@@ -1,0 +1,23 @@
+question==>https://www.codechef.com/SNCK1A21/problems/MINLCM1
+
+
+
+
+#include<bits/stdc++.h>
+#include <boost/math/common_factor.hpp>
+#define int long long
+using namespace std;
+signed main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int x,k;
+        cin>>x>>k;
+        int big = k*x-1;
+        cout<<boost::math::lcm(x,2*x)<<" "<<boost::math::lcm(big,big+1);
+        cout<<endl;
+    }
+    return 0;
+}
+
+
