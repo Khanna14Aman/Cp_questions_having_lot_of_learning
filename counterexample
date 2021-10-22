@@ -1,0 +1,36 @@
+question====>https://codeforces.com/contest/483/problem/A
+
+
+#include<bits/stdc++.h>
+#define int long long 
+using namespace std;
+signed main()
+{
+    int l,r;
+    cin>>l>>r;
+    if(r-l<2){
+        cout<<"-1\n";
+        return 0;
+    }
+    else{
+        if(l%2==0){
+            cout<<l<<" "<<l+1<<" "<<l+2<<endl;
+            return 0;
+        }
+        else if(r%2==0){
+            cout<<r-2<<" "<<r-1<<" "<<r<<endl;
+            return 0;
+        }
+        else if(r-l>2){
+            cout<<l+1<<" "<<l+2<<" "<<l+3<<endl;
+            return 0;
+        }
+        else{
+            cout<<"-1\n";
+            return 0;
+        }
+            
+        
+    }
+    return 0;
+}
