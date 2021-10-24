@@ -1,0 +1,17 @@
+question==>https://codeforces.com/contest/1582/problem/A
+
+
+#include<bits/stdc++.h>
+#define int long long
+using namespace std;
+signed main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int a,b,c;
+        cin>>a>>b>>c;
+        int sum = a+2*b+3*c;
+        cout<<sum%2<<endl;
+    }
+    return 0;
+}
